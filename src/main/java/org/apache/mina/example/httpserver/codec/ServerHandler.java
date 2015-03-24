@@ -44,11 +44,12 @@ import org.apache.mina.core.session.IoSession;
       @Override
       public void messageReceived(IoSession session, Object message) {
           // Check that we can service the request context
+    	  System.out.println(message.getClass().getName());
           HttpResponseMessage response = new HttpResponseMessage();
           response.setContentType("text/plain");
           response.setResponseCode(HttpResponseMessage.HTTP_STATUS_SUCCESS);
           response.appendBody("CONNECTED");
-  
+          
           // msg.setResponseCode(HttpResponseMessage.HTTP_STATUS_SUCCESS);
           // byte[] b = new byte[ta.buffer.limit()];
           // ta.buffer.rewind().get(b);
@@ -64,7 +65,7 @@ import org.apache.mina.core.session.IoSession;
 //           response.appendBody(String.format(
 //           "<html><body><h1>UNKNOWN REQUEST %d</h1></body></html>",
 //           HttpResponseMessage.HTTP_STATUS_NOT_FOUND));
-          
+//          session.g
         response = new HttpResponseMessage();
         response.setResponseCode(HttpResponseMessage.HTTP_STATUS_SUCCESS);
         response.appendBody("<html><body><h1>"+new java.text.SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss.SSS").format(new java.util.Date())+"</h1></body></html>");

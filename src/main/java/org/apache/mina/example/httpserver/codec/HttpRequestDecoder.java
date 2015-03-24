@@ -154,6 +154,7 @@
      }
  
      private Map<String, String[]> parseRequest(Reader is) {
+    	 
          Map<String, String[]> map = new HashMap<String, String[]>();
          BufferedReader rdr = new BufferedReader(is);
  
@@ -224,6 +225,7 @@
              ex.printStackTrace();
          }
  
+//         System.out.println(map);
          return map;
      }
  }
